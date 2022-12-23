@@ -5,15 +5,13 @@ message="$(cat $1)"
 requiredPattern="^(feat:|fix:|perf:|refactor:) .*$"
 if ! [[ $message =~ $requiredPattern ]];
 then
-  echo "🚨 Wrong commit message! 😕"
+  echo "🚨 Wrong commit message!!! 😕\n"
   echo "The commit message must have this format:"
-  echo "<verb in imperative mood>: <what was done>"
+  echo "<verb in imperative mood>: <what was done>\n"
   echo "Allowed verbs in imperative mood: feat, fix, refactor, perf"
   echo "Example: feat: login button \n"
   echo "Your commit message was:"
-  echo $message echo "\n"
+  echo $message "\n"
   echo "For more information, check script in .husky/commit-msg"
   exit 1
 fi
-
-npm lint-staged
