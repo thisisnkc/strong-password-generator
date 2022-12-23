@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import Menu from './components/menu';
+import { styled } from '@mui/material/styles';
+import MuiCard from '@mui/material/Card';
+
+const Card = styled(MuiCard)(({ theme }) => ({
+  [theme.breakpoints.up('sm')]: { width: '100vw', height: '100vh' }
+}));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Card
+      sx={{
+        backgroundColor: '#dffaff',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}
+    >
+      <Menu />
+    </Card>
   );
 }
 
